@@ -1,10 +1,11 @@
-Breadboard 170 puncte - Culoare : Alb	 
-Display led 7 segmente	 
-Placa de dezvoltare UNO R3 compatibil Arduino
-Cablu USB A-B 1.8m Arduino Mega, UNO, imprimanta
-30 x Fire Dupont mama-tata 10cm
-10 x LED 5mm - Culoare : Ro?u	
-10 x LED 5mm - Culoare : Verde	
-10 x LED 5mm - Culoare : Albastru
-Rezistenta 1/4W 1 buc - Valoare rezistenta : 470R	
-Sezor temperatura  pentru brik 
+
+Breadboard 170 puncte - Culoare : Alb	 	5,02 lei	 
+Display led 7 segmente	 	1,98 lei
+Placa de dezvoltare UNO R3 compatibil Arduino  21,98 lei	
+Cablu USB A-B 1.8m Arduino Mega, UNO, imprimanta	5,99 lei	 
+30 x Fire Dupont mama-tata 10cm  6,94 lei
+10 x LED 5mm - Culoare : Rosu	    3,00 lei	  
+10 x LED 5mm - Culoare : Verde	  3,00 lei	 
+10 x LED 5mm - Culoare : Albastru 3,00 lei	 
+Rezistenta 1/4W 1 buc - Valoare rezistenta : 470R		3,60 lei	 
+Sezor temperatura  pentru brik 7 lei 
