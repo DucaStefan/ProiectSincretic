@@ -1,0 +1,7 @@
+pin 12 ledul 1 comunicatie seriala 
+pin 15 ledul 2 timer 
+pin 9  ledul 3 pentru senzorul de temperatura
+pin 10 ledul 3 dimming (pwm)
+
+sezorul de temperatura este legat la pinul A0 si la 5v
+pushbutton-ul este legat la A2 si la 5v
