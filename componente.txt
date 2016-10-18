@@ -1,0 +1,9 @@
+Breadboard 170 puncte - Culoare : Alb	 
+Display led 7 segmente	 
+Placa de dezvoltare UNO R3 compatibil Arduino
+Cablu USB A-B 1.8m Arduino Mega, UNO, imprimanta
+30 x Fire Dupont mama-tata 10cm
+10 x LED 5mm - Culoare : Ro?u	
+10 x LED 5mm - Culoare : Verde	
+10 x LED 5mm - Culoare : Albastru
+Rezistenta 1/4W 1 buc - Valoare rezistenta : 470R	
