@@ -1,0 +1,175 @@
+/*
+ * GccApplication2.c
+ *
+ * Created: 10/20/2016 7:07:38 PM
+ * Author : Stefan
+ */ 
+  int timer1_counter=0;
+  int duty,op=0;
+  int sw=1;
+
+#include <avr/io.h>
+#define F_CPU 16000000
+#include <util/delay.h>
+#include <avr/interrupt.h>
+#define FOSC 1843200 // Clock Speed
+#define BAUD 9600
+#define MYUBRR F_CPU/16/BAUD-1
+
+void USART_Init( unsigned int ubrr)
+{
+	/*Set baud rate */
+	UBRR0H = (unsigned char)(ubrr>>8);
+	UBRR0L = (unsigned char)ubrr;
+
+	UCSR0B = (1<<RXEN0)|(1<<TXEN0);
+	/* Set frame format: 8data, 2stop bit */
+	UCSR0C = (1<<USBS0)|(3<<UCSZ00);
+}
+
+
+void USART_Transmit( unsigned char data )
+{
+	/* Wait for empty transmit buffer */
+	while ( !( UCSR0A & (1<<UDRE0)) ){};
+	/* Put data into buffer, sends the data */
+	UDR0 = data;
+}
+
+
+unsigned char USART_Receive( void )
+{
+	/* Wait for data to be received */
+	while ( !(UCSR0A & (1<<RXC0)) );
+	/* Get and return received data from buffer */
+	return UDR0;
+}
+
+void init_pwm()
+{
+       // mod non-inverted
+       TCCR0A |= (1 << COM0A1);
+       // fast PWM  TOP 
+       TCCR0A |= (1 << WGM01) | (1 << WGM00);
+       //no prescaler
+       TCCR0B |= (1 << CS01);
+}
+
+
+ISR(USART_R0_vect)
+{  
+   char a;
+   a=USART_Receive();
+   if( a == '1')
+   {
+	   PORTB |= (1<<PORTB4);
+
+   }
+   else if( a== '0')
+   {
+	   PORTB &= ~(1<<PORTB4);
+
+   }
+	
+}
+
+
+void init_timer0()
+{   
+    cli();
+	
+
+    init_pwm();
+    sei();
+
+}
+void init_timer1 ()
+{ 
+   cli();
+    TCCR1A = 0;
+    TCCR1B = 0;
+
+    // Set timer1_counter to the correct value for our interrupt interval
+    //timer1_counter = 64911;   // preload timer 65536-16MHz/256/100Hz
+    //timer1_counter = 64286;   // preload timer 65536-16MHz/256/50Hz
+   // timer1_counter = 0;   // preload timer 65536-16MHz/256/2Hz
+    
+    TCNT1 = 0;   // preload timer
+    TCCR1B |= (1 << CS12);    // 256 prescaler
+    TIMSK1 |= (1 << TOIE1);   // enable timer overflow interrupt
+   
+   sei();
+}
+
+ISR(TIMER1_OVF_vect)
+{   
+      int i = 0;
+     if(duty > 100 )
+	 {
+	  
+	   duty=0;
+	 }
+	 switch (sw)
+	 {
+	    case 1 : 
+					for (  i = 0; i< 9; i++)
+					{
+						duty= duty+3;
+						OCR0A=duty;
+					}
+		
+		       break;
+
+		case 2 :
+		       {  
+			       if( timer1_counter == 4)
+				   {
+
+
+				   }
+					duty= 255;
+					OCR0A=duty;
+				    timer1_counter ++;
+				}
+		             
+		       break;
+
+		case 3 :
+					for ( i = 0; i< 9; i++)
+					{
+						duty= duty+4;
+						OCR0A=duty;
+					}
+		       break;
+
+		case 4 :
+		        break;
+
+		default: break;
+	 }
+	 
+	 char p[5] = "hello  ";
+	
+     for( int i = 0 ; i < 7 ; i ++ ) USART_Transmit(p[i]);
+}
+
+
+int main(void)
+{
+	//DDRB |= (1 << PORTB5);
+	DDRD |= (1 << PORTD6);
+    DDRB |= (1 << PORTB4);
+    
+	USART_Init(MYUBRR);
+	init_timer1();
+	init_timer0();
+	char a;
+	
+	   //PORTB |= (1 << PORTB4);	
+    /* Replace with your application code */
+    while (1) 
+    {
+		
+    }
+}
+
