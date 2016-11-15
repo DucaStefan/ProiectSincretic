@@ -1,0 +1,9 @@
+c:\users\stefan\documents\visual studio 2015\Projects\ArduinoSerial\ArduinoSerial\bin\Debug\ArduinoSerial.exe.config
+c:\users\stefan\documents\visual studio 2015\Projects\ArduinoSerial\ArduinoSerial\obj\Debug\ArduinoSerial.csprojResolveAssemblyReference.cache
+c:\users\stefan\documents\visual studio 2015\Projects\ArduinoSerial\ArduinoSerial\obj\Debug\ArduinoSerial.Form1.resources
+c:\users\stefan\documents\visual studio 2015\Projects\ArduinoSerial\ArduinoSerial\obj\Debug\ArduinoSerial.Properties.Resources.resources
+c:\users\stefan\documents\visual studio 2015\Projects\ArduinoSerial\ArduinoSerial\obj\Debug\ArduinoSerial.csproj.GenerateResource.Cache
+c:\users\stefan\documents\visual studio 2015\Projects\ArduinoSerial\ArduinoSerial\bin\Debug\ArduinoSerial.exe
+c:\users\stefan\documents\visual studio 2015\Projects\ArduinoSerial\ArduinoSerial\bin\Debug\ArduinoSerial.pdb
+c:\users\stefan\documents\visual studio 2015\Projects\ArduinoSerial\ArduinoSerial\obj\Debug\ArduinoSerial.exe
+c:\users\stefan\documents\visual studio 2015\Projects\ArduinoSerial\ArduinoSerial\obj\Debug\ArduinoSerial.pdb
